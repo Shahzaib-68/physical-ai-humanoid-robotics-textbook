@@ -15,17 +15,12 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://your-username.github.io',
+  url: 'https://your-project-name.vercel.app', // Update with your actual Vercel project URL
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'your-username', // Usually your GitHub org/user name.
-  projectName: 'physical-ai-humanoid-robotics-textbook', // Usually your repo name.
-  deploymentBranch: 'gh-pages',
-  trailingSlash: false,
+  // Vercel deployment settings
+  trailingSlash: undefined, // Let Docusaurus handle trailing slashes automatically for Vercel
 
   onBrokenLinks: 'throw',
 
@@ -46,7 +41,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/Shahzaib-68/physical-ai-humanoid-robotics-textbook/edit/master/website/',
         },
         blog: {
           showReadingTime: true,
@@ -57,7 +52,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/Shahzaib-68/physical-ai-humanoid-robotics-textbook/edit/master/website/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',

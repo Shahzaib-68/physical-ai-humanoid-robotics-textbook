@@ -16,7 +16,8 @@
     "lint": "eslint --cache --ext .js,.jsx,.ts,.tsx src",
     "lint:fix": "eslint --cache --ext .js,.jsx,.ts,.tsx src --fix",
     "format": "prettier --write --list-different src/**/*.{js,jsx,ts,tsx,md,mdx}",
-    "format:check": "prettier --check src/**/*.{js,jsx,ts,tsx,md,mdx}"
+    "format:check": "prettier --check src/**/*.{js,jsx,ts,tsx,md,mdx}",
+    "vercel-build": "docusaurus build"
   },
   "dependencies": {
     "@docusaurus/core": "3.9.2",

@@ -10,7 +10,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # ✅ YEH SAHI HAI - CHANGE MAT KARO
     steps:
     - name: Checkout 🛎️
       uses: actions/checkout@v3
@@ -20,16 +20,17 @@ jobs:
       with:
         node-version: '20'
         cache: 'npm'
-        cache-dependency-path: 'website/package-lock.json'
+        # ✅ FIXED: Aapka actual path
+        cache-dependency-path: 'physical-ai-humanoid-robotics-textbook/package-lock.json'
 
     - name: Install dependencies 📥
       run: |
-        cd website
+        cd physical-ai-humanoid-robotics-textbook
         npm ci
 
     - name: Build 🏗️
       run: |
-        cd website
+        cd physical-ai-humanoid-robotics-textbook
         npm run build
 
     - name: Deploy to GitHub Pages 🚀
@@ -37,5 +38,5 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./website/build
-        # cname: your-domain.com  # Uncomment if using custom domain
+        publish_dir: ./physical-ai-humanoid-robotics-textbook/build
+        # ✅ NO CNAME - Using GitHub subdomain
