@@ -91,7 +91,7 @@ const config: Config = {
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/your-username/physical-ai-humanoid-robotics-textbook',
+          href: 'https://github.com/Shahzaib-68/physical-ai-humanoid-robotics-textbook.git',
           label: 'GitHub',
           position: 'right',
         },
@@ -99,64 +99,11 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: 'Modules',
-          items: [
-            {
-              label: 'Module 1: The Robotic Nervous System',
-              to: '/docs/intro',
-            },
-            {
-              label: 'Module 2: The Digital Twin',
-              to: '/docs/module-2/chapter-2-1',
-            },
-            {
-              label: 'Module 3: The AI-Robot Brain',
-              to: '/docs/module-3/chapter-3-1',
-            },
-            {
-              label: 'Module 4: Vision-Language-Action',
-              to: '/docs/module-4/chapter-4-1',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/physical-ai',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/physical-ai',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/physicalai',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/your-username/physical-ai-humanoid-robotics-textbook',
-            },
-          ],
-        },
-      ],
       copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Textbook. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      darkTheme: prismThemes.vsDark,
     },
   } satisfies Preset.ThemeConfig,
 };

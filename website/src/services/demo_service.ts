@@ -1,7 +1,7 @@
 import { Demo, createDemo } from '../models/Demo';
 import { chapterApi } from '../api/chapters';
-import { validateDemo } from '../utils/validation';
 import { DemoExecutionError, ValidationError } from '../utils/validation';
+// Note: validateCode aur validateDemo methods ab class ke andar defined hain
 
 export class DemoService {
   // Execute a demo in the browser
@@ -27,12 +27,60 @@ export class DemoService {
 
   // Validate demo code
   validateCode(code: string, dependencies: string[]): string[] {
-    return validateDemo({ code, dependencies } as Demo);
+    const errors: string[] = [];
+    
+    // Basic code validation
+    if (!code || code.trim().length === 0) {
+      errors.push('Code cannot be empty');
+    }
+    
+    // Check for dangerous patterns
+    if (code.includes('eval(') || code.includes('Function(')) {
+      errors.push('Code contains potentially dangerous constructs');
+    }
+    
+    // Validate dependencies
+    if (dependencies.length === 0) {
+      errors.push('At least one dependency must be specified');
+    }
+    
+    return errors;
   }
 
   // Validate a complete demo object
   validateDemo(demo: Demo): string[] {
-    return validateDemo(demo);
+    const errors: string[] = [];
+    
+    if (!demo) {
+      errors.push('Demo object is required');
+      return errors;
+    }
+    
+    if (!demo.id) {
+      errors.push('Demo ID is required');
+    }
+    
+    if (!demo.title || demo.title.trim().length === 0) {
+      errors.push('Demo title is required');
+    }
+    
+    if (!demo.code || demo.code.trim().length === 0) {
+      errors.push('Demo code is required');
+    }
+    
+    if (!demo.dependencies || demo.dependencies.length === 0) {
+      errors.push('At least one dependency must be specified');
+    }
+    
+    // Validate each dependency
+    const unsupportedDeps = demo.dependencies.filter(
+      dep => !this.isSupportedDependency(dep)
+    );
+    if (unsupportedDeps.length > 0) {
+      errors.push(`Unsupported dependencies: ${unsupportedDeps.join(', ')}`);
+    }
+    
+    return errors;
   }
 
   // Create a new demo (for content creation tools)

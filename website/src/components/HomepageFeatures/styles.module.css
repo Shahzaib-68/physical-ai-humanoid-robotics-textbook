@@ -1,11 +1,468 @@
-.features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
-  width: 100%;
-}
+/* ========================================
+   HOMEPAGE FEATURES - AGENTIC AI THEME
+   ======================================== */
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
-}
+   .features {
+    display: flex;
+    align-items: center;
+    padding: 6rem 0;
+    width: 100%;
+    background: linear-gradient(180deg, #0f1428 0%, #0a0e27 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Animated Background Grid */
+  .features::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 40px,
+        rgba(0, 255, 255, 0.02) 40px,
+        rgba(0, 255, 255, 0.02) 41px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 40px,
+        rgba(0, 255, 255, 0.02) 40px,
+        rgba(0, 255, 255, 0.02) 41px
+      );
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  /* Radial Glow Effect */
+  .features::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.08) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 0;
+    animation: ambientPulse 6s ease-in-out infinite;
+  }
+  
+  @keyframes ambientPulse {
+    0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 0.5; transform: translate(-50%, -50%) scale(1.1); }
+  }
+  
+  .features .container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* ========================================
+     SECTION HEADER
+     ======================================== */
+  
+  .sectionHeader {
+    text-align: center;
+    margin-bottom: 5rem;
+    position: relative;
+  }
+  
+  .sectionTitle {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: #ffffff;
+    text-shadow: 
+      0 0 10px var(--accent-cyan),
+      0 0 20px var(--accent-cyan),
+      0 0 30px var(--accent-cyan);
+    margin-bottom: 1rem;
+    animation: titleGlow 3s ease-in-out infinite;
+  }
+  
+  @keyframes titleGlow {
+    0%, 100% { 
+      text-shadow: 
+        0 0 10px var(--accent-cyan),
+        0 0 20px var(--accent-cyan);
+    }
+    50% { 
+      text-shadow: 
+        0 0 20px var(--accent-cyan),
+        0 0 30px var(--accent-cyan),
+        0 0 40px var(--accent-cyan);
+    }
+  }
+  
+  .titleUnderline {
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      var(--accent-cyan) 50%, 
+      transparent 100%);
+    margin: 1.5rem auto;
+    box-shadow: 0 0 15px var(--accent-cyan);
+    animation: lineExpand 2s ease-in-out infinite;
+  }
+  
+  @keyframes lineExpand {
+    0%, 100% { width: 120px; }
+    50% { width: 180px; }
+  }
+  
+  .sectionSubtitle {
+    font-size: 1.2rem;
+    color: var(--accent-cyan);
+    font-weight: 500;
+    letter-spacing: 2px;
+    opacity: 0.9;
+    margin-top: 1rem;
+  }
+  
+  /* ========================================
+     FEATURE CARDS
+     ======================================== */
+  
+  .featureCard {
+    background: rgba(10, 14, 39, 0.7);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 2px solid var(--accent-cyan);
+    padding: 3rem 2rem;
+    height: 100%;
+    margin: 1rem 0;
+    box-shadow: 
+      0 0 30px rgba(0, 255, 255, 0.2),
+      inset 0 0 30px rgba(0, 255, 255, 0.05);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    clip-path: polygon(
+      20px 0, 
+      100% 0, 
+      100% calc(100% - 20px), 
+      calc(100% - 20px) 100%, 
+      0 100%, 
+      0 20px
+    );
+    overflow: hidden;
+  }
+  
+  /* Hover Effect */
+  .featureCard:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 
+      0 0 50px rgba(0, 255, 255, 0.4),
+      inset 0 0 50px rgba(0, 255, 255, 0.1);
+    border-color: var(--ifm-color-primary-lighter);
+  }
+  
+  /* Animated Border Glow */
+  .featureCard::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(
+      45deg,
+      transparent 0%,
+      var(--accent-cyan) 50%,
+      transparent 100%
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: -1;
+    animation: borderRotate 4s linear infinite;
+  }
+  
+  .featureCard:hover::before {
+    opacity: 0.3;
+  }
+  
+  @keyframes borderRotate {
+    0% { transform: rotate(0deg) scale(1.1); }
+    100% { transform: rotate(360deg) scale(1.1); }
+  }
+  
+  /* Scanline Effect */
+  .featureCard::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      var(--accent-cyan) 50%, 
+      transparent 100%);
+    box-shadow: 0 0 15px var(--accent-cyan);
+    animation: scanlineMove 3s linear infinite;
+  }
+  
+  @keyframes scanlineMove {
+    0% { top: -100%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+  }
+  
+  /* Tech Corners */
+  .cornerTopLeft,
+  .cornerBottomRight {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--accent-cyan);
+    box-shadow: 0 0 10px var(--accent-cyan);
+    transition: all 0.5s ease;
+  }
+  
+  .cornerTopLeft {
+    top: 10px;
+    left: 10px;
+    border-right: none;
+    border-bottom: none;
+  }
+  
+  .cornerBottomRight {
+    bottom: 10px;
+    right: 10px;
+    border-left: none;
+    border-top: none;
+  }
+  
+  .featureCard:hover .cornerTopLeft {
+    top: 5px;
+    left: 5px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .featureCard:hover .cornerBottomRight {
+    bottom: 5px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* ========================================
+     ICON WRAPPER - CENTERED AND BIGGER
+     ======================================== */
+  
+  .featureIconWrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 2.5rem auto;
+    width: 100%;
+    min-height: 280px;
+  }
+  
+  /* Glowing Background Circle */
+  .iconGlow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.2) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    animation: iconGlowPulse 3s ease-in-out infinite;
+    z-index: 0;
+  }
+  
+  @keyframes iconGlowPulse {
+    0%, 100% { 
+      transform: translate(-50%, -50%) scale(1); 
+      opacity: 0.5; 
+    }
+    50% { 
+      transform: translate(-50%, -50%) scale(1.2); 
+      opacity: 0.8; 
+    }
+  }
+  
+  .featureSvg {
+    height: 250px;
+    width: 250px;
+    position: relative;
+    z-index: 1;
+    filter: 
+      drop-shadow(0 0 20px var(--accent-cyan))
+      brightness(1.2)
+      contrast(1.1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .featureCard:hover .featureSvg {
+    filter: 
+      drop-shadow(0 0 30px var(--accent-cyan))
+      brightness(1.4)
+      contrast(1.2);
+    transform: scale(1.1) rotate(5deg);
+  }
+  
+  /* ========================================
+     FEATURE CONTENT
+     ======================================== */
+  
+  .featureContent {
+    text-align: center;
+    padding: 0 1rem;
+  }
+  
+  .featureTitle {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--accent-cyan);
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 15px var(--accent-glow);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .featureTitle::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--accent-cyan);
+    box-shadow: 0 0 10px var(--accent-cyan);
+    transition: width 0.3s ease;
+  }
+  
+  .featureCard:hover .featureTitle::after {
+    width: 60%;
+  }
+  
+  .featureDescription {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(224, 231, 255, 0.9);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+  
+  .featureDescription code {
+    background: rgba(0, 255, 255, 0.1);
+    color: var(--accent-cyan);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid var(--accent-cyan);
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+  }
+  
+  /* ========================================
+     RESPONSIVE DESIGN
+     ======================================== */
+  
+  @media screen and (max-width: 996px) {
+    .features {
+      padding: 4rem 0;
+    }
+    
+    .sectionHeader {
+      margin-bottom: 3rem;
+    }
+    
+    .sectionTitle {
+      font-size: 2.5rem;
+      letter-spacing: 4px;
+    }
+    
+    .featureIconWrapper {
+      min-height: 220px;
+    }
+    
+    .iconGlow {
+      width: 240px;
+      height: 240px;
+    }
+    
+    .featureSvg {
+      height: 200px;
+      width: 200px;
+    }
+    
+    .featureCard {
+      margin: 1rem 0.5rem;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .features {
+      padding: 3rem 0;
+    }
+    
+    .sectionTitle {
+      font-size: 2rem;
+      letter-spacing: 2px;
+    }
+    
+    .sectionSubtitle {
+      font-size: 1rem;
+    }
+    
+    .featureIconWrapper {
+      min-height: 180px;
+    }
+    
+    .iconGlow {
+      width: 200px;
+      height: 200px;
+    }
+    
+    .featureSvg {
+      height: 160px;
+      width: 160px;
+    }
+    
+    .featureCard {
+      padding: 2rem 1.5rem;
+      clip-path: polygon(
+        15px 0, 
+        100% 0, 
+        100% calc(100% - 15px), 
+        calc(100% - 15px) 100%, 
+        0 100%, 
+        0 15px
+      );
+    }
+    
+    .featureTitle {
+      font-size: 1.3rem;
+      letter-spacing: 2px;
+    }
+    
+    .featureDescription {
+      font-size: 1rem;
+    }
+    
+    .cornerTopLeft,
+    .cornerBottomRight {
+      width: 20px;
+      height: 20px;
+    }
+  }

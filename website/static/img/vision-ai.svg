@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <!-- Background Glow -->
+  <defs>
+    <radialGradient id="glow3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#00ffff;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#00ffff;stop-opacity:0" />
+    </radialGradient>
+    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ffff;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#0088ff;stop-opacity:0.1" />
+    </linearGradient>
+  </defs>
+  
+  <circle cx="200" cy="200" r="150" fill="url(#glow3)"/>
+  
+  <!-- Main Monitor/Screen -->
+  <rect x="100" y="100" width="200" height="150" rx="10" fill="#0a0e27" stroke="#00ffff" stroke-width="3"/>
+  
+  <!-- Screen Content -->
+  <rect x="110" y="110" width="180" height="130" rx="5" fill="url(#screenGrad)"/>
+  
+  <!-- Camera/Eye Icon -->
+  <circle cx="200" cy="175" r="35" fill="#1a1f3a" stroke="#00ffff" stroke-width="2"/>
+  <circle cx="200" cy="175" r="25" fill="#0a0e27" stroke="#00ffff" stroke-width="2"/>
+  
+  <!-- Lens Reflection -->
+  <circle cx="200" cy="175" r="20" fill="none" stroke="#00ffff" stroke-width="3" opacity="0.6">
+    <animate attributeName="r" values="20;23;20" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Pupil with scanning effect -->
+  <circle cx="200" cy="175" r="10" fill="#00ffff">
+    <animate attributeName="opacity" values="0.8;1;0.8" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Scan Lines -->
+  <g opacity="0.6">
+    <line x1="110" y1="130" x2="290" y2="130" stroke="#00ffff" stroke-width="1">
+      <animate attributeName="y1" values="130;230;130" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="130;230;130" dur="3s" repeatCount="indefinite"/>
+    </line>
+  </g>
+  
+  <!-- Corner Brackets -->
+  <path d="M 110 110 L 130 110 M 110 110 L 110 130" stroke="#00ffff" stroke-width="2" opacity="0.8"/>
+  <path d="M 290 110 L 270 110 M 290 110 L 290 130" stroke="#00ffff" stroke-width="2" opacity="0.8"/>
+  <path d="M 110 240 L 130 240 M 110 240 L 110 220" stroke="#00ffff" stroke-width="2" opacity="0.8"/>
+  <path d="M 290 240 L 270 240 M 290 240 L 290 220" stroke="#00ffff" stroke-width="2" opacity="0.8"/>
+  
+  <!-- Data Points around camera -->
+  <circle cx="160" cy="140" r="3" fill="#00ffff">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="1s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="240" cy="140" r="3" fill="#00ffff">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="1s" begin="0.3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="160" cy="210" r="3" fill="#00ffff">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="1s" begin="0.6s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="240" cy="210" r="3" fill="#00ffff">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="1s" begin="0.9s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Monitor Stand -->
+  <rect x="185" y="250" width="30" height="40" rx="5" fill="#1a1f3a" stroke="#00ffff" stroke-width="2"/>
+  
+  <!-- Base -->
+  <ellipse cx="200" cy="295" rx="60" ry="12" fill="#1a1f3a" stroke="#00ffff" stroke-width="2"/>
+  
+  <!-- Neural Network Connections -->
+  <g opacity="0.4">
+    <!-- Left side nodes -->
+    <circle cx="80" cy="150" r="5" fill="#00ffff"/>
+    <circle cx="80" cy="200" r="5" fill="#00ffff"/>
+    <line x1="80" y1="150" x2="100" y2="175" stroke="#00ffff" stroke-width="1"/>
+    <line x1="80" y1="200" x2="100" y2="175" stroke="#00ffff" stroke-width="1"/>
+    
+    <!-- Right side nodes -->
+    <circle cx="320" cy="150" r="5" fill="#00ffff"/>
+    <circle cx="320" cy="200" r="5" fill="#00ffff"/>
+    <line x1="320" y1="150" x2="300" y2="175" stroke="#00ffff" stroke-width="1"/>
+    <line x1="320" y1="200" x2="300" y2="175" stroke="#00ffff" stroke-width="1"/>
+  </g>
+  
+  <!-- Detection Box Animation -->
+  <g opacity="0.7">
+    <rect x="170" y="150" width="60" height="50" fill="none" stroke="#00ffff" stroke-width="2" stroke-dasharray="5,5">
+      <animate attributeName="stroke-dashoffset" from="0" to="10" dur="1s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <!-- Info Display Lines -->
+  <g opacity="0.5">
+    <line x1="120" y1="120" x2="150" y2="120" stroke="#00ffff" stroke-width="1"/>
+    <line x1="250" y1="120" x2="280" y2="120" stroke="#00ffff" stroke-width="1"/>
+    <line x1="120" y1="230" x2="150" y2="230" stroke="#00ffff" stroke-width="1"/>
+    <line x1="250" y1="230" x2="280" y2="230" stroke="#00ffff" stroke-width="1"/>
+  </g>
+  
+  <!-- Rotating Radar Effect -->
+  <g opacity="0.3">
+    <line x1="200" y1="175" x2="230" y2="145" stroke="#00ffff" stroke-width="2">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        from="0 200 175" 
+        to="360 200 175" 
+        dur="4s" 
+        repeatCount="indefinite"/>
+    </line>
+  </g>
+</svg>
