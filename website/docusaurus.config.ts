@@ -15,7 +15,7 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://physical-ai-robotics.vercel.app', 
+  url: 'https://physical-ai-humanoid-robotics-textb-xi-nine.vercel.app', 
   // Set the /<baseUrl>/ pathname under which your site is served
   baseUrl: '/',
 
@@ -52,7 +52,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/Shahzaib-68/physical-ai-humanoid-robotics-textbook/edit/master/website/',
+            'https://github.com/Shahzaib-68/physical-ai-humanoid-robotics-textbook/edit/main/website/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
