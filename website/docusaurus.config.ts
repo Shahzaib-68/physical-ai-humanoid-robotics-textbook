@@ -15,12 +15,12 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://your-project-name.vercel.app', // Update with your actual Vercel project URL
+  url: 'https://physical-ai-robotics.vercel.app', 
   // Set the /<baseUrl>/ pathname under which your site is served
   baseUrl: '/',
 
   // Vercel deployment settings
-  trailingSlash: undefined, // Let Docusaurus handle trailing slashes automatically for Vercel
+  trailingSlash: true, // Set to true for consistent behavior with Vercel's routing
 
   onBrokenLinks: 'throw',
 
