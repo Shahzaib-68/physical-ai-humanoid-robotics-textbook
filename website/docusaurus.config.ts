@@ -20,9 +20,10 @@ const config: Config = {
   baseUrl: '/',
 
   // Vercel deployment settings
-  trailingSlash: true, // Set to true for consistent behavior with Vercel's routing
+  trailingSlash: false, // Set to false to prevent conflicts with Vercel's default behavior
 
   onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
