@@ -23,7 +23,8 @@ const config: Config = {
   trailingSlash: false, // Set to false to prevent conflicts with Vercel's default behavior
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  // Removed onBrokenMarkdownLinks to eliminate deprecation warning
+  // The default behavior will be used instead
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
