@@ -1,15 +1,12 @@
 {
-    "name": "physical-ai-handbook",
-    "version": "1.0.0",
-    "private": true,
-    "scripts": {
-      "build": "cd website && npm ci && npm run build",
-      "postinstall": "cd website && npm ci"
-    },
-    "workspaces": [
-      "website"
-    ],
-    "engines": {
-      "node": ">=20.0"
-    }
+  "name": "physical-ai-handbook-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd website && npm install && npm run build",
+    "install": "cd website && npm install"
+  },
+  "engines": {
+    "node": ">=20.0"
   }
+}
