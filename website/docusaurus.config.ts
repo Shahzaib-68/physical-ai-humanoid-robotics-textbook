@@ -15,7 +15,7 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://physical-ai-humanoid-robotics-textb-xi-nine.vercel.app', 
+  url: 'https://physical-ai-humanoid-robotics-textb-mu.vercel.app', 
   // Set the /<baseUrl>/ pathname under which your site is served
   baseUrl: '/',
 
@@ -62,6 +62,13 @@ const config: Config = {
         },
         theme: {
           customCss: './src/css/custom.css',
+        },
+        // Explicitly configure sitemap
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
         },
       } satisfies Preset.Options,
     ],
